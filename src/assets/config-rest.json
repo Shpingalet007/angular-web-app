@@ -1,0 +1,20 @@
+{
+  "protocol": "HTTP",
+  "port": 4020,
+  "host": "localhost",
+  "path": "/api",
+
+  "requests": {
+    "articlesList":[ "GET", "/category/${ params.categoryId }/articles/list" ],
+
+    "articleData":[ "GET", "/article/${ params.articleId }" ],
+    "articleCreate":[ "POST", "/article/create" ],
+    "articleEdit":[ "PUT", "/article/${ params.articleId }" ],
+    "articleDelete":[ "DELETE", "/article/${ params.articleId }" ],
+
+    "articlePublish":[ "PUT", "/article/${ params.articleId }/publish" ],
+    "articleUnpublish":[ "PUT", "/article/${ params.articleId }/unpublish" ]
+
+    "commentCreate": [ "POST", "/comment/add" ]
+  }
+}
