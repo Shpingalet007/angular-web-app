@@ -1,23 +1,64 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to Fluo!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<header>
+  <div id="topPanel">
+    <div class="wrapper">
+      <span class="blogName">F l u o</span>
+      <span class="tagline">The blurry IT blog</span>
+    </div>
+  </div>
+  <div id="menu">
+    <a href="#homepage">Home</a>
+    <a href="#hitech">Hi-Tech</a>
+    <a href="#arduino">Arduino</a>
+    <a href="#raspberry">Raspberry PI</a>
+    <a href="#linux">Linux</a>
+    <a href="#macos">Mac OS</a>
+  </div>
+</header>
+<div id="page" class="wrapper">
+  <content>
+    <router-outlet></router-outlet>
+    <!--<a class="article" href="#article3428">
+      <span class="title">Article #1</span>
+      <span class="date">Sunday, 7 april 2018</span>
+      <div class="image" style="background-image: url('../images/arduino.jpg')"></div>
+      <p class="short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus est non risus rutrum, vel hendrerit magna eleifend. Pellentesque sodales suscipit risus vel viverra. Nunc vitae sem et magna egestas ornare vitae ac lorem. Nunc ut est dui. Sed sit amet mattis elit, sed scelerisque sapien. Morbi ultrices est vestibulum, convallis libero sit amet, mollis lectus. Ut elit mi, lobortis at mi non, aliquet fermentum massa. Aenean nec magna vulputate, gravida felis ac, aliquet arcu. Nulla neque enim, tempor eget lacinia eget, dignissim id velit.</p>
+      <span class="text-end">... Read more ...</span>
+    </a>
+    <a class="article" href="#article3429">
+      <span class="title">Article #2</span>
+      <span class="date">Sunday, 7 april 2018</span>
+      <div class="image" style="background-image: url('../images/arduino.jpg')"></div>
+      <p class="short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus est non risus rutrum, vel hendrerit magna eleifend. Pellentesque sodales suscipit risus vel viverra. Nunc vitae sem et magna egestas ornare vitae ac lorem. Nunc ut est dui. Sed sit amet mattis elit, sed scelerisque sapien. Morbi ultrices est vestibulum, convallis libero sit amet, mollis lectus. Ut elit mi, lobortis at mi non, aliquet fermentum massa. Aenean nec magna vulputate, gravida felis ac, aliquet arcu. Nulla neque enim, tempor eget lacinia eget, dignissim id velit.</p>
+      <span class="text-end">... Read more ...</span>
+    </a>
+    <a class="article" href="#article3430">
+      <span class="title">Article #3</span>
+      <span class="date">Sunday, 7 april 2018</span>
+      <div class="image" style="background-image: url('../images/arduino.jpg')"></div>
+      <p class="short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus est non risus rutrum, vel hendrerit magna eleifend. Pellentesque sodales suscipit risus vel viverra. Nunc vitae sem et magna egestas ornare vitae ac lorem. Nunc ut est dui. Sed sit amet mattis elit, sed scelerisque sapien. Morbi ultrices est vestibulum, convallis libero sit amet, mollis lectus. Ut elit mi, lobortis at mi non, aliquet fermentum massa. Aenean nec magna vulputate, gravida felis ac, aliquet arcu. Nulla neque enim, tempor eget lacinia eget, dignissim id velit.</p>
+      <span class="text-end">... Read more ...</span>
+    </a>
+    <a class="article" href="#article3431">
+      <span class="title">Article #4</span>
+      <span class="date">Sunday, 7 april 2018</span>
+      <div class="image" style="background-image: url('../images/arduino.jpg')"></div>
+      <p class="short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus est non risus rutrum, vel hendrerit magna eleifend. Pellentesque sodales suscipit risus vel viverra. Nunc vitae sem et magna egestas ornare vitae ac lorem. Nunc ut est dui. Sed sit amet mattis elit, sed scelerisque sapien. Morbi ultrices est vestibulum, convallis libero sit amet, mollis lectus. Ut elit mi, lobortis at mi non, aliquet fermentum massa. Aenean nec magna vulputate, gravida felis ac, aliquet arcu. Nulla neque enim, tempor eget lacinia eget, dignissim id velit.</p>
+      <span class="text-end">... Read more ...</span>
+    </a>-->
+  </content>
+  <aside>
+    <section>
+      <div class="title">Section 1</div>
+      <div class="content">
+        <li>Spot</li>
+      </div>
+    </section>
+    <section>
+      <div class="title">Section 2</div>
+      <div class="content">
+        <li>Spot</li>
+      </div>
+    </section>
+  </aside>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-  <li>
-    <h2><a (click)="getArticles()">Request Articles</a></h2>
-  </li>
-</ul>
-
+<footer></footer>
