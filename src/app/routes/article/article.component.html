@@ -1,2 +1,15 @@
-<h2>{{articleData.title}}</h2>
-<p>{{articleData.text}}</p>
+<h2>{{article.title}}</h2>
+<span class="date">{{article.date}}</span>
+<div class="image" style="background-image: url('../images/arduino.jpg')"></div>
+<p class="short">{{article.text}}</p>
+
+<div *ngFor="let comment of comments">
+  <hr/>
+  <h5><u>{{comment.author}}</u>: {{comment.text}}</h5>
+</div>
+
+<form ng-submit="onSubmit()">
+  <input type="text" placeholder="Comment author">
+  <textarea type="text" placeholder="Comment text"></textarea>
+  <input type="submit" value="Send comment">
+</form>

@@ -3,23 +3,37 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigService } from './services/config.service';
-
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { ArticleComponent } from './routes/article/article.component';
 import { HomeComponent } from './routes/home/home.component';
+import { CategoryComponent } from './routes/category/category.component';
+import { ArticleComponent } from './routes/article/article.component';
 
-import { ArticleResolve } from './routes/article/resolve.service';
-import { RestApiService } from "./services/rest-api.service";
+import { RestApiService } from './services/rest-api.service';
+import { HomeResolve } from './routes/home/resolve.service';
+import { CategoryResolve } from './routes/category/resolve.service';
+import { ArticleResolve, CommentsResolve } from './routes/article/resolve.service';
+import { CommentComponent } from './forms/comment/comment.component';
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent,
+    resolve: {
+      articlesList: HomeResolve
+    }
   },
   {
-    path: 'article/:id', component: ArticleComponent,
+    path: 'category/:id', component: CategoryComponent,
     resolve: {
-      article: ArticleResolve
+      articlesList: CategoryResolve
+    }
+  },
+  {
+    path: 'article/:shortId', component: ArticleComponent,
+    resolve: {
+      article: ArticleResolve,
+      comments: CommentsResolve
     }
   }
 ];
@@ -28,7 +42,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ArticleComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +52,13 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {useHash: true})
   ],
   providers: [
+    [{provide: APP_BASE_HREF, useValue: '/'}],
     ConfigService,
+    RestApiService,
+    HomeResolve,
     ArticleResolve,
-    RestApiService
+    CategoryResolve,
+    CommentsResolve
   ],
   bootstrap: [AppComponent]
 })

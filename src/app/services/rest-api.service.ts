@@ -14,11 +14,37 @@ export class RestApiService {
     return this.httpClient.get(url);
   }
 
-  /*getArticles(categoryId, cb) {
+  getComments(articleId): Observable<any> {
+    const url = `${ this.apiRoot }/api/article/${ articleId }/comments`;
+
+    return this.httpClient.get(url);
+  }
+
+  getAllArticles() {
+    const url = `${ this.apiRoot }/api/articles/list`;
+
+    return this.httpClient.get(url);
+  }
+
+  getArticles(categoryId) {
     const url = `${ this.apiRoot }/api/articles/${ categoryId }/list`;
 
-    this.httpClient.get(url).subscribe(data => {
-      cb(data);
+    return this.httpClient.get(url);
+  }
+
+  getCategories() {
+    const url = `${ this.apiRoot }/api/categories/list`;
+
+    return this.httpClient.get(url);
+  }
+
+  sendComment(text, article, author) {
+    const url = `${ this.apiRoot }/api/comments/add`;
+
+    return this.httpClient.post(url, {
+      text: text,
+      article: article,
+      author: author
     });
-  }*/
+  }
 }

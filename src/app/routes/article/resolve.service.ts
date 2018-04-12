@@ -11,6 +11,18 @@ export class ArticleResolve implements Resolve<any> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
   ): Observable<any> {
-    return this.api.getArticle(route.params.id);
+    return this.api.getArticle(route.params.shortId);
+  }
+}
+
+@Injectable()
+export class CommentsResolve implements Resolve<any> {
+  constructor(private api: RestApiService) {}
+
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot,
+  ): Observable<any> {
+    return this.api.getComments(route.params.shortId);
   }
 }

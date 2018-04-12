@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RestApiService } from '../../services/rest-api.service';
 
 
 @Component({
@@ -9,16 +8,20 @@ import { RestApiService } from '../../services/rest-api.service';
   styleUrls: ['./article.component.css'],
 })
 export class ArticleComponent implements OnInit {
-  articleData: any;
+  article: any;
+  comments: any;
 
-  constructor(
-    private api: RestApiService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private route: ActivatedRoute) {}
+
+  static onSubmit() {
+    console.log('Form submit');
+  }
 
   ngOnInit(): void {
     console.log('Article page loaded');
-    this.articleData = this.route.snapshot.data.article.data;
-    console.log(this.articleData);
+
+    this.article = this.route.snapshot.data.article.data;
+    this.comments = this.route.snapshot.data.comments.data;
+    console.log(this.article, this.comments);
   }
 }
