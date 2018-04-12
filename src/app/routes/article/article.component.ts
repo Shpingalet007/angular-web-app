@@ -9,7 +9,7 @@ import { RestApiService } from '../../services/rest-api.service';
   styleUrls: ['./article.component.css'],
 })
 export class ArticleComponent implements OnInit {
-  articleData;
+  articleData: any;
 
   constructor(
     private api: RestApiService,
@@ -18,12 +18,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Article page loaded');
-    this.route.params.subscribe(article => {
-      console.log('Requesting content');
-
-      this.api.getArticle(article.id, data => {
-        this.articleData = data;
-      });
-    });
+    this.articleData = this.route.snapshot.data.article.data;
+    console.log(this.articleData);
   }
 }

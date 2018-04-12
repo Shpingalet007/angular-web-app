@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class RestApiService {
@@ -7,10 +8,10 @@ export class RestApiService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getArticle(articleId, cb) {
+  getArticle(articleId): Observable<any> {
     const url = `${ this.apiRoot }/api/article/${ articleId }`;
 
-    return this.httpClient.get(url).subscribe(cb);
+    return this.httpClient.get(url);
   }
 
   /*getArticles(categoryId, cb) {

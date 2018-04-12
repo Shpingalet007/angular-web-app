@@ -8,11 +8,20 @@ import { ConfigService } from './services/config.service';
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './routes/article/article.component';
 import { HomeComponent } from './routes/home/home.component';
+
+import { ArticleResolve } from './routes/article/resolve.service';
 import { RestApiService } from "./services/rest-api.service";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'article/:id', component: ArticleComponent }
+  {
+    path: '', component: HomeComponent,
+  },
+  {
+    path: 'article/:id', component: ArticleComponent,
+    resolve: {
+      article: ArticleResolve
+    }
+  }
 ];
 
 @NgModule({
@@ -28,6 +37,7 @@ const routes: Routes = [
   ],
   providers: [
     ConfigService,
+    ArticleResolve,
     RestApiService
   ],
   bootstrap: [AppComponent]
